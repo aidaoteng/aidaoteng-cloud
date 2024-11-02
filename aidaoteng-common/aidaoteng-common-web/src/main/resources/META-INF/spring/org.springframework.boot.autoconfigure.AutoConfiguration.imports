@@ -1,0 +1,4 @@
+com.aidaoteng.common.web.config.FilterConfig
+com.aidaoteng.common.web.config.I18nConfig
+com.aidaoteng.common.web.config.UndertowConfig
+com.aidaoteng.common.web.config.ResourcesConfig

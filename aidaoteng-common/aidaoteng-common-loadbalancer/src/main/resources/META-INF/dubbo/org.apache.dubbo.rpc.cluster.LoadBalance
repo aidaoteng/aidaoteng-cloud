@@ -1,0 +1,1 @@
+customDubboLoadBalancer=com.aidaoteng.common.loadbalance.core.CustomDubboLoadBalancer

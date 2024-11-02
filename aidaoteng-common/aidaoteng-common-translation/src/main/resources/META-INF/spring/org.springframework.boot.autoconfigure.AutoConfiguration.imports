@@ -1,0 +1,6 @@
+com.aidaoteng.common.translation.config.TranslationConfig
+com.aidaoteng.common.translation.core.impl.DeptNameTranslationImpl
+com.aidaoteng.common.translation.core.impl.DictTypeTranslationImpl
+com.aidaoteng.common.translation.core.impl.OssUrlTranslationImpl
+com.aidaoteng.common.translation.core.impl.UserNameTranslationImpl
+com.aidaoteng.common.translation.core.impl.NicknameTranslationImpl

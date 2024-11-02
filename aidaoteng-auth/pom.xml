@@ -1,0 +1,133 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.aidaoteng</groupId>
+        <artifactId>aidaoteng-cloud</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>aidaoteng-auth</artifactId>
+
+    <description>
+        aidaoteng-auth 认证授权中心
+    </description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-nacos</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-captcha</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-sentinel</artifactId>
+        </dependency>
+
+        <!-- Aidaoteng Common Security-->
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-social</artifactId>
+        </dependency>
+
+        <!-- Aidaoteng Common Log -->
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-log</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-doc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-ratelimiter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-encrypt</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-dubbo</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-seata</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-common-tenant</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.aidaoteng</groupId>
+            <artifactId>aidaoteng-api-resource</artifactId>
+        </dependency>
+
+        <!-- 自定义负载均衡(多团队开发使用) -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-loadbalancer</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- ELK 日志收集 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-logstash</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- skywalking 日志收集 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-skylog</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- prometheus 监控 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-prometheus</artifactId>-->
+<!--        </dependency>-->
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

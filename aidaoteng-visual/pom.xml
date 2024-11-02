@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.aidaoteng</groupId>
+        <artifactId>aidaoteng-cloud</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>aidaoteng-sentinel-dashboard</module>
+        <module>aidaoteng-seata-server</module>
+        <module>aidaoteng-nacos</module>
+        <module>aidaoteng-snailjob-server</module>
+    </modules>
+
+    <artifactId>aidaoteng-visual</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        aidaoteng-visual图形化管理模块
+    </description>
+
+    <dependencies>
+        <!-- ELK 日志收集 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-logstash</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- skywalking 日志收集 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-skylog</artifactId>-->
+<!--        </dependency>-->
+
+        <!-- prometheus 监控 -->
+<!--        <dependency>-->
+<!--            <groupId>com.aidaoteng</groupId>-->
+<!--            <artifactId>aidaoteng-common-prometheus</artifactId>-->
+<!--        </dependency>-->
+    </dependencies>
+
+</project>

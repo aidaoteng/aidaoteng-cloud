@@ -1,0 +1,2 @@
+com.aidaoteng.common.encrypt.config.EncryptorAutoConfiguration
+com.aidaoteng.common.encrypt.config.ApiDecryptAutoConfiguration

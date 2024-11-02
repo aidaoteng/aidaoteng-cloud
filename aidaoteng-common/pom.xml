@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.aidaoteng</groupId>
+        <artifactId>aidaoteng-cloud</artifactId>
+        <version>${revision}</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <modules>
+        <module>aidaoteng-common-bom</module>
+        <module>aidaoteng-common-alibaba-bom</module>
+        <module>aidaoteng-common-log</module>
+        <module>aidaoteng-common-dict</module>
+        <module>aidaoteng-common-excel</module>
+        <module>aidaoteng-common-core</module>
+        <module>aidaoteng-common-redis</module>
+        <module>aidaoteng-common-doc</module>
+        <module>aidaoteng-common-security</module>
+        <module>aidaoteng-common-satoken</module>
+        <module>aidaoteng-common-web</module>
+        <module>aidaoteng-common-mybatis</module>
+        <module>aidaoteng-common-job</module>
+        <module>aidaoteng-common-dubbo</module>
+        <module>aidaoteng-common-seata</module>
+        <module>aidaoteng-common-loadbalancer</module>
+        <module>aidaoteng-common-oss</module>
+        <module>aidaoteng-common-ratelimiter</module>
+        <module>aidaoteng-common-idempotent</module>
+        <module>aidaoteng-common-mail</module>
+        <module>aidaoteng-common-sms</module>
+        <module>aidaoteng-common-logstash</module>
+        <module>aidaoteng-common-elasticsearch</module>
+        <module>aidaoteng-common-sentinel</module>
+        <module>aidaoteng-common-skylog</module>
+        <module>aidaoteng-common-prometheus</module>
+        <module>aidaoteng-common-translation</module>
+        <module>aidaoteng-common-sensitive</module>
+        <module>aidaoteng-common-json</module>
+        <module>aidaoteng-common-encrypt</module>
+        <module>aidaoteng-common-tenant</module>
+        <module>aidaoteng-common-websocket</module>
+        <module>aidaoteng-common-social</module>
+        <module>aidaoteng-common-nacos</module>
+        <module>aidaoteng-common-bus</module>
+        <module>aidaoteng-common-sse</module>
+    </modules>
+
+    <artifactId>aidaoteng-common</artifactId>
+    <packaging>pom</packaging>
+
+    <description>
+        aidaoteng-common通用模块
+    </description>
+
+</project>
