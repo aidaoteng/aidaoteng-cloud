@@ -55,13 +55,14 @@ public class SpringDocAutoConfiguration {
         openApi.externalDocs(properties.getExternalDocs());
         openApi.tags(properties.getTags());
         openApi.paths(properties.getPaths());
-        openApi.components(properties.getComponents());
-        Set<String> keySet = properties.getComponents().getSecuritySchemes().keySet();
-        List<SecurityRequirement> list = new ArrayList<>();
-        SecurityRequirement securityRequirement = new SecurityRequirement();
-        keySet.forEach(securityRequirement::addList);
-        list.add(securityRequirement);
-        openApi.security(list);
+        // todo
+//        openApi.components(properties.getComponents());
+//        Set<String> keySet = properties.getComponents().getSecuritySchemes().keySet();
+//        List<SecurityRequirement> list = new ArrayList<>();
+//        SecurityRequirement securityRequirement = new SecurityRequirement();
+//        keySet.forEach(securityRequirement::addList);
+//        list.add(securityRequirement);
+//        openApi.security(list);
 
         return openApi;
     }

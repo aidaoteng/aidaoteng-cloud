@@ -37,7 +37,7 @@ public class SecurityConfiguration implements WebMvcConfigurer {
     public SaServletFilter getSaServletFilter() {
         return new SaServletFilter()
             .addInclude("/**")
-            .addExclude("/actuator", "/actuator/**")
+            .addExclude("/actuator", "/actuator/**","/swagger-ui/**","/v3/api-docs/**","/swagger-ui.html")
             .setAuth(obj -> {
                 if (SaManager.getConfig().getCheckSameToken()) {
                     SaSameUtil.checkCurrentRequestToken();
