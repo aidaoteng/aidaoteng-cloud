@@ -5,6 +5,7 @@ import com.aidaoteng.system.domain.SysMenu;
 import com.aidaoteng.system.domain.bo.SysMenuBo;
 import com.aidaoteng.system.domain.vo.RouterVo;
 import com.aidaoteng.system.domain.vo.SysMenuVo;
+import com.aidaoteng.system.domain.vo.UserRouterVO;
 
 import java.util.List;
 import java.util.Set;
@@ -144,4 +145,11 @@ public interface ISysMenuService {
      * @return 结果
      */
     boolean checkMenuNameUnique(SysMenuBo menu);
+
+    /**
+     * 获取菜单残有
+     * @param userId 用户id
+     * @return 菜单列表
+     */
+    List<UserRouterVO> selectMenuListByUserId(Long userId);
 }

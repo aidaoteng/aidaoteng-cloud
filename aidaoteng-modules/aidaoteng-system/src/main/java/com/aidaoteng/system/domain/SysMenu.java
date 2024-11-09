@@ -3,6 +3,7 @@ package com.aidaoteng.system.domain;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import com.aidaoteng.common.core.constant.Constants;
@@ -40,6 +41,10 @@ public class SysMenu extends BaseEntity {
      */
     private String menuName;
 
+    @Schema(description = "菜单名标题")
+    @TableField(value = "title")
+    private String title;
+
     /**
      * 显示顺序
      */
@@ -63,7 +68,7 @@ public class SysMenu extends BaseEntity {
     /**
      * 是否为外链（0是 1否）
      */
-    private String isFrame;
+    private Integer isFrame;
 
     /**
      * 是否缓存（0缓存 1不缓存）
@@ -105,6 +110,10 @@ public class SysMenu extends BaseEntity {
      */
     @TableField(exist = false)
     private String parentName;
+
+    @Schema(description = "是否锁定tab")
+    @TableField(value = "is_pin_tab")
+    private Integer isPinTab;
 
     /**
      * 子菜单

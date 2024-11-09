@@ -1,9 +1,11 @@
 package com.aidaoteng.system.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
+import cn.hutool.core.collection.CollectionUtil;
 import cn.hutool.core.convert.Convert;
 import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.util.ObjectUtil;
+import com.aidaoteng.system.domain.vo.UserRouterVO;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -366,4 +368,45 @@ public class SysMenuServiceImpl implements ISysMenuService {
         }
     }
 
+
+    /**
+     * 获取菜单残有
+     * @param userId 用户id
+     * @return 菜单列表
+     */
+    public List<UserRouterVO> selectMenuListByUserId(Long userId) {
+        List<UserRouterVO> voList = new ArrayList<>();
+        List<SysMenu> menus;
+        if (LoginHelper.isSuperAdmin(userId)) {
+            menus = baseMapper.selectMenuTreeAll();
+        } else {
+            menus = baseMapper.selectMenuTreeByUserId(userId);
+        }
+        if(CollectionUtil.isEmpty(menus)) {
+            return voList;
+        }
+        for (SysMenu menu : menus) {
+            UserRouterVO router = getUserRouterVo(menu);
+            voList.add(router);
+        }
+        return voList;
+    }
+
+    private UserRouterVO getUserRouterVo(SysMenu menu) {
+        UserRouterVO router = new UserRouterVO();
+        router.setName(menu.getMenuName());
+        router.setPath(menu.getPath());
+        router.setTitle(menu.getTitle());
+        router.setRequiresAuth(true);
+        router.setIcon(menu.getIcon());
+        if(menu.getIsFrame()==1) {
+            router.setHref(menu.getComponent());
+        }
+        router.setMenuType("M".equals(menu.getMenuType())?"dir":"page");
+        router.setComponentPath(menu.getComponent());
+        router.setId(menu.getMenuId());
+        router.setPid(menu.getParentId());
+        router.setPinTab(menu.getIsPinTab()==1);
+        return router;
+    }
 }

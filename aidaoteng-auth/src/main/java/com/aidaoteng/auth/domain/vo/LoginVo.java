@@ -1,5 +1,6 @@
 package com.aidaoteng.auth.domain.vo;
 
+import com.aidaoteng.system.api.model.LoginUser;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -10,6 +11,12 @@ import lombok.Data;
  */
 @Data
 public class LoginVo {
+
+    private Long id;
+
+    private String role;
+
+    private LoginUser loginUser;
 
     /**
      * 授权令牌
@@ -50,5 +57,8 @@ public class LoginVo {
      * 用户 openid
      */
     private String openid;
+
+
+
 
 }

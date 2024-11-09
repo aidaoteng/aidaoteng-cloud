@@ -13,6 +13,8 @@ import com.aidaoteng.common.core.utils.SpringUtils;
 import com.aidaoteng.common.core.utils.StringUtils;
 import com.aidaoteng.common.satoken.utils.LoginHelper;
 import com.aidaoteng.gateway.config.properties.IgnoreWhiteProperties;
+import lombok.extern.log4j.Log4j;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -22,6 +24,7 @@ import org.springframework.http.server.reactive.ServerHttpRequest;
  *
  * @author Lion Li
  */
+@Slf4j
 @Configuration
 public class AuthFilter {
 
@@ -57,6 +60,11 @@ public class AuthFilter {
                         String paramCid = request.getQueryParams().getFirst(LoginHelper.CLIENT_KEY);
                         String clientId = StpUtil.getExtra(LoginHelper.CLIENT_KEY).toString();
                         if (!StringUtils.equalsAny(clientId, headerCid, paramCid)) {
+
+                            // 退出登陆
+                            StpUtil.logout();
+                            log.info("客户端ID与Token不匹配,强行退出");
+
                             // token 无效
                             throw NotLoginException.newInstance(StpUtil.getLoginType(),
                                 "-100", "客户端ID与Token不匹配",

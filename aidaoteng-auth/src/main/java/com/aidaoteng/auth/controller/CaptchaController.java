@@ -3,6 +3,7 @@ package com.aidaoteng.auth.controller;
 import cn.hutool.captcha.AbstractCaptcha;
 import cn.hutool.captcha.generator.CodeGenerator;
 import cn.hutool.core.util.IdUtil;
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import com.aidaoteng.auth.domain.vo.CaptchaVo;
@@ -42,6 +43,7 @@ public class CaptchaController {
     /**
      * 生成验证码
      */
+    @Operation(summary = "生成验证码")
     @RateLimiter(time = 60, count = 10, limitType = LimitType.IP)
     @GetMapping("/code")
     public R<CaptchaVo> getCode() {

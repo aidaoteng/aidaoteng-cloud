@@ -4,6 +4,7 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import cn.dev33.satoken.annotation.SaCheckRole;
 import cn.dev33.satoken.annotation.SaMode;
 import cn.hutool.core.lang.tree.Tree;
+import com.aidaoteng.system.domain.vo.UserRouterVO;
 import lombok.RequiredArgsConstructor;
 import com.aidaoteng.common.core.constant.TenantConstants;
 import com.aidaoteng.common.core.constant.UserConstants;
@@ -42,10 +43,18 @@ public class SysMenuController extends BaseController {
      *
      * @return 路由信息
      */
-    @GetMapping("/getRouters")
-    public R<List<RouterVo>> getRouters() {
-        List<SysMenu> menus = menuService.selectMenuTreeByUserId(LoginHelper.getUserId());
-        return R.ok(menuService.buildMenus(menus));
+//    @GetMapping("/getRouters")
+//    public R<List<RouterVo>> getRouters() {
+//        List<SysMenu> menus = menuService.selectMenuTreeByUserId(LoginHelper.getUserId());
+//        return R.ok(menuService.buildMenus(menus));
+//    }
+
+    /**
+     * 获取当前用户菜单权限
+     */
+    @GetMapping("/getUserRoutes")
+    public R<List<UserRouterVO>> getUserRoutes() {
+        return R.ok(menuService.selectMenuListByUserId(LoginHelper.getUserId()));
     }
 
     /**

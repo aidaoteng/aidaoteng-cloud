@@ -4,6 +4,7 @@ import cn.dev33.satoken.exception.NotLoginException;
 import cn.hutool.core.codec.Base64;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.ObjectUtil;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -78,6 +79,7 @@ public class TokenController {
      * @param body 登录信息
      * @return 结果
      */
+    @Operation(summary = "登录方法login")
     @ApiEncrypt
     @PostMapping("/login")
     public R<LoginVo> login(@RequestBody String body) {

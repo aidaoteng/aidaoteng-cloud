@@ -80,6 +80,10 @@ public class PasswordAuthStrategy implements IAuthStrategy {
         loginVo.setAccessToken(StpUtil.getTokenValue());
         loginVo.setExpireIn(StpUtil.getTokenTimeout());
         loginVo.setClientId(client.getClientId());
+
+        loginVo.setId(loginUser.getUserId());
+        loginVo.setRole("admin");
+        loginVo.setLoginUser(loginUser);
         return loginVo;
     }
 
