@@ -11,11 +11,11 @@ import org.springframework.boot.context.metrics.buffering.BufferingApplicationSt
  * @author ruoyi
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class AidaotengGatewayApplication {
+public class GatewayApplication {
     public static void main(String[] args) {
         // 标记 sentinel 类型为 网关
         System.setProperty("csp.sentinel.app.type", "1");
-        SpringApplication application = new SpringApplication(AidaotengGatewayApplication.class);
+        SpringApplication application = new SpringApplication(GatewayApplication.class);
         application.setApplicationStartup(new BufferingApplicationStartup(2048));
         application.run(args);
         System.out.println("(♥◠‿◠)ﾉﾞ  网关启动成功   ლ(´ڡ`ლ)ﾞ  ");

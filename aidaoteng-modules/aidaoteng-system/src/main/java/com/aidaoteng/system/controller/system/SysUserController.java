@@ -6,6 +6,7 @@ import cn.hutool.core.lang.tree.Tree;
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
@@ -43,6 +44,7 @@ import java.util.List;
  *
  * @author Lion Li
  */
+@Schema(description = "用户管理")
 @Validated
 @RequiredArgsConstructor
 @RestController
@@ -58,6 +60,7 @@ public class SysUserController extends BaseController {
     /**
      * 获取用户列表
      */
+    @Schema(description = "获取用户列表")
     @SaCheckPermission("system:user:list")
     @GetMapping("/list")
     public R<Page<SysUserVo>> list(SysUserBo user, PageQuery pageQuery) {

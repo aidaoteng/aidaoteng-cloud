@@ -1,3 +1,3 @@
 com.aidaoteng.common.log.event.LogEventListener
 com.aidaoteng.common.log.aspect.LogAspect
-com.aidaoteng.common.log.aspect.WebLogAspect
+com.aidaoteng.common.log.aspect.ControllerLogAspect

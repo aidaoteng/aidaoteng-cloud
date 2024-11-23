@@ -1,23 +1,22 @@
-package com.aidaoteng.auth;
+package com.aidaoteng.system;
 
 import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 
 /**
- * 认证授权中心
+ * 系统模块
  *
  * @author ruoyi
  */
 @EnableDubbo
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-public class AidaotengAuthApplication {
+@SpringBootApplication
+public class SystemApplication {
     public static void main(String[] args) {
-        SpringApplication application = new SpringApplication(AidaotengAuthApplication.class);
+        SpringApplication application = new SpringApplication(SystemApplication.class);
         application.setApplicationStartup(new BufferingApplicationStartup(2048));
         application.run(args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  认证授权中心启动成功   ლ(´ڡ`ლ)ﾞ  ");
+        System.out.println("(♥◠‿◠)ﾉﾞ  系统模块启动成功   ლ(´ڡ`ლ)ﾞ  ");
     }
 }

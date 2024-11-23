@@ -31,7 +31,6 @@ import java.io.Serial;
 #set($Entity="BaseEntity")
 #end
 @Data
-@EqualsAndHashCode(callSuper = true)
 @TableName("${tableName}")
 public class ${ClassName} extends ${Entity} {
 

@@ -9,7 +9,6 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
-        <module>aidaoteng-seata-server</module>
         <module>aidaoteng-nacos</module>
         <module>aidaoteng-snailjob-server</module>
     </modules>
